@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Cache;
+namespace App\Core\Cache;
 
 class  Cache{
 
@@ -20,7 +20,7 @@ class  Cache{
         if (empty($key))
             return false;
         $key_md = self::getHashKey($key);
-        $basePath =  \App\Config\Config::get('CACHE_PATH');
+        $basePath =  \App\Core\Config\Config::get('CACHE_PATH');
         if (!is_dir($basePath))
             mkdir($basePath,0777);
             $filePath = $basePath.'/'.$key_md.'.php';

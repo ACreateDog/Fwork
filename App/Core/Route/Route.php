@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Route;
+namespace App\Core\Route;
 
-use App\Cache\Cache;
+use App\Core\Cache\Cache;
 
 class Route
 {
@@ -17,15 +17,19 @@ class Route
 
 
         //访问缓存
-        if (Cache::has($requestURL)){
-            echo Cache::get($requestURL);
-            exit();
-        }
+
+//        echo  Cache::has($requestURL);
+//        echo  $requestURL;
+//        if (Cache::has($requestURL)){
+//            echo Cache::get($requestURL);
+//            exit();
+//        }
+
 
         $requestArr = explode('/',$requestURL);
         if (count($requestArr) % 2 != 0){
 
-            $base =  new BaseController();
+            $base =  new \App\Core\Controller();
             $base->display('404.html');
 
             exit();
@@ -36,7 +40,8 @@ class Route
         $controller = $requestArr[2];
         $method = $requestArr[3];
 
-        $class_ = '\\App\\Controller\\'.$controller;
+        $class_ = '\\App\\Project\\Controller\\'.$controller;
+
 
         //解析出 参数
         $paramArr = array();

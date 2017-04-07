@@ -1,22 +1,22 @@
 <?php
-namespace App;
+namespace App\Core;
 
 
-use App\Config\Config;
-use App\Route\Route;
+use App\Core\Config\Config;
+use App\Core\Route\Route;
 
 class App{
 
     static public function run()
     {
 
+
+        include 'App/Project/Common/common.php';
         //类加载器
-        include 'App/Common/common.php';
-//        jump('http://www.baidu.com');
         spl_autoload_register('self::autoLoad');
 
         //加载配置
-        Config::$config = include 'App/Common/config.php';
+        Config::$config = include 'App/Project/Common/config.php';
 
         //路由解析
         Route::parseURL();

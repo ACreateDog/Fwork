@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace App\Core;
 
-class BaseController{
+class Controller{
     public $data = [];
 
     public function assign($key=null,$value = null)
@@ -14,7 +14,8 @@ class BaseController{
     }
 
     public function display($viewName){
-        $filePath = 'App/View/'.$viewName;
+
+        $filePath = 'App/Project/View/'.$viewName;
         if (is_file($filePath) && file_exists($filePath)){
             ob_start();
             extract($this->data);
@@ -22,7 +23,8 @@ class BaseController{
             $echo_out = ob_get_contents();
             $echo_out = str_replace('__ROOT__',$_SERVER['SCRIPT_NAME'],$echo_out);
             ob_end_clean();
-            \App\Cache\Cache::set(cacheVar('url'),$echo_out);
+//            \App\Core\Cache\Cache::set(cacheVar('url'),$echo_out);
+
             echo  $echo_out;
 
         }

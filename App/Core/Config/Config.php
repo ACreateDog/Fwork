@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Config;
+namespace App\Core\Config;
 
 
 class Config
@@ -12,6 +12,7 @@ class Config
 
     public static function get($name)
     {
+
         if (array_key_exists($name,self::$config))
             return self::$config[$name];
 
