@@ -30,7 +30,7 @@ class Route
         $requestArr = explode('/',$requestURL);
         if (count($requestArr) % 2 != 0){
 
-            $base =  new \App\Core\Controller();
+            $base =  new \Core\Controller();
             $base->display('404.html');
 
             exit();
@@ -41,7 +41,7 @@ class Route
         $controller = $requestArr[2];
         $method = $requestArr[3];
 
-        $class_ = '\\App\\Project\\Controller\\'.$controller;
+        $class_ = '\\Controller\\'.$controller;
 
 
         //解析出 参数

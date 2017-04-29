@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Project\Model;
+namespace Model;
 
 class  UserModel{
 

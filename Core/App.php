@@ -12,8 +12,10 @@ class App{
 
 
         include 'App/Project/Common/common.php';
+
         //类加载器
-        spl_autoload_register('self::autoLoad');
+        include 'Loader.php';
+        Loader::register();
 
         //加载配置
         Config::$config = include 'App/Project/Common/config.php';
@@ -22,21 +24,4 @@ class App{
         Route::parseURL();
     }
 
-    static public function autoLoad($className){
-
-//         echo($className);
-        echo($className);
-        try{
-            $className = str_replace('\\','/',$className);
-            $filePath = $className.'.php';
-
-            if (is_file($filePath) && file_exists($filePath))
-                include $className.'.php';
-            else
-                throw new \Exception('此类文件不存在');
-        }catch (\Exception $exception){
-            echo $exception->getMessage();
-        }
-
-    }
 }

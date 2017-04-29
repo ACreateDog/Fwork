@@ -1,8 +1,8 @@
 <?php
-namespace App\Project\Controller;
+namespace Controller;
 
 use Core\Controller;
-use App\Project\Model\UserModel;
+use Model\UserModel;
 
 class  Admin extends Controller {
 

@@ -1,6 +1,5 @@
 <?php
 
-
     function jump($url){
         header('Location:'.$url);
     }
