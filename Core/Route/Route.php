@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Core\Route;
+namespace Core\Route;
 
-use App\Core\Cache\Cache;
+use Core\Cache\Cache;
 
 class Route
 {
@@ -11,10 +11,11 @@ class Route
         //路由解析
         $requestURL = $_SERVER['REQUEST_URI'];
         $requestURL = trim($requestURL,'/');
-
+        // echo($requestURL);
+        echo('<pre>');
+        print_r($_SERVER);
         //缓存下请求路径
         cacheVar('url',$requestURL);
-
 
         //访问缓存
 

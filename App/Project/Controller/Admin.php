@@ -1,7 +1,7 @@
 <?php
 namespace App\Project\Controller;
 
-use App\Core\Controller;
+use Core\Controller;
 use App\Project\Model\UserModel;
 
 class  Admin extends Controller {
@@ -11,7 +11,7 @@ class  Admin extends Controller {
 
         $model = new UserModel();
         $data = $model->getData();
-        echo  'ppppaa';
+        
         //给 view 赋值
         $this->assign('id',$data['id'])->assign('data',$data['data'])->assign('arr',$data['dataArr']);
 

@@ -9,6 +9,4 @@ return array(
     'CACHE_PATH' => 'App/Core/Cache/CachedFile',
     'CACHE_TYPE' => 'FILE', // MYSQL
 
-
-
 );

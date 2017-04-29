@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core\Cache;
+namespace Core\Cache;
 
 class  Cache{
 
