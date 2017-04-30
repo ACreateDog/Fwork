@@ -15,8 +15,9 @@ class Controller{
 
     public function display($viewName){
 
-        $filePath = 'App/Project/View/'.$viewName;
+        $filePath = PROJECT_PATH.'/View/'.$viewName;
         if (is_file($filePath) && file_exists($filePath)){
+
             ob_start();
             extract($this->data);
             include $filePath;

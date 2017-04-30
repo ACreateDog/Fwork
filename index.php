@@ -7,5 +7,3 @@
 
     include './Core/App.php';
     \Core\App::run();
-
-	
