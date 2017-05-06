@@ -2,7 +2,7 @@
 
 namespace Core\Route;
 
-//use Core\Cache\Cache;
+use Core\Request;
 
 class Route
 {
@@ -70,5 +70,7 @@ class Route
         }
 
         self::$params = $paramArr;
+        Request::$requestInfo = $paramArr;
+        Request::$file = $_FILES;
     }
 }

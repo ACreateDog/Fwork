@@ -23,4 +23,21 @@ class Config
     {
         self::$config[$key] = $value;
     }
+
+    public static function loadConfig()
+    {
+
+
+        $userConfig = PROJECT_PATH.'Common/config.php';
+        $defaultConfig = CORE_PATH.'Config/config.php';
+
+        if (is_array($userConfig) && !empty($userConfig)){
+            $memrgConfig = array_merge($userConfig,$defaultConfig);
+            self::$config = $memrgConfig;
+
+        }else{
+            self::$config = $defaultConfig;
+        }
+
+    }
 }

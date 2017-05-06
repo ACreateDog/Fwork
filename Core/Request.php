@@ -12,4 +12,17 @@ namespace Core;
 class Request
 {
     public static $requestInfo = [];
+    public static $file        = [];
+
+
+    public static function get($key){
+
+        if (array_key_exists($key,self::$requestInfo)){
+            return self::$requestInfo[$key];
+        }
+
+
+        return null;
+    }
+
 }

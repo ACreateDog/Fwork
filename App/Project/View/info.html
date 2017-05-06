@@ -3,36 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style type="text/css">
-        .pp{
-            color: red;
-            font-size: 20px;
-            display: inline-block;
-        }
-        table {
-            background: green;
-        }
-    </style>
 </head>
 <body>
-    <p class="pp"> <? echo $id; ?> </p>
-    <table>
-
-        <?php
-            echo $data;
-
-            foreach($arr as $key => $value){
-        ?>
-                <tr>
-                    <td><? echo $key ?> </td>
-                    <td><? echo $value ?> </td>
-                </tr>
-        <?
-            }
-        ?>
-
-    </table>
-
     <form action="__ROOT__/admin/action" method="post">
         <input type="text" name="ppp">
         <input type="submit" value="提交">
