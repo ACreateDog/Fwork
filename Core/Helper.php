@@ -26,6 +26,7 @@ function outPut($content){
     echo $content;
 }
 
+
 function request($key){
     return \Core\Request::get($key);
 }

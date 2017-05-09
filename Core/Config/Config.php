@@ -9,7 +9,6 @@ class Config
 
     static public $config = [];
 
-
     public static function get($name)
     {
 
